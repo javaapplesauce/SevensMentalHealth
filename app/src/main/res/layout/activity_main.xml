@@ -34,8 +34,9 @@
         android:background="@color/dark_grey"
         android:scaleType="centerInside"
         android:layout_centerHorizontal="true"
-
+        android:id="@+id/mainPageButton"
         android:src="@drawable/mainpage_play_button"
+        android:onClick="goToActivityContent"
     />
 
 </RelativeLayout>
