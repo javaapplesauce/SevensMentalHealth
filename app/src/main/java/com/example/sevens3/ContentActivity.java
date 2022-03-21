@@ -18,10 +18,10 @@ public class ContentActivity extends AppCompatActivity {
 
     public void goToBreakActivity(View view)
     {
-        Button breakButton = findViewById(R.id.breakButton);
+        Button breakButton = findViewById(R.id.BreakButton);
 
         try {
-            Intent k = new Intent(ContentActivity.this, ContentActivity.class);
+            Intent k = new Intent(ContentActivity.this, BreakActivityAuto.class);
             startActivity(k);
         } catch(Exception e) {
             e.printStackTrace();
