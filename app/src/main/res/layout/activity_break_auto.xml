@@ -23,44 +23,50 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/SwitchType"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
+            android:src="@drawable/switch_button"
+            android:scaleType="centerInside"
+            android:background="@color/dark_grey"
             />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/SoundButton"
             android:layout_weight="1"
             android:layout_marginLeft="300dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
+            android:src="@drawable/sound_button"
+            android:background="@color/dark_grey"
+            android:scaleType="centerInside"
             />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/NumberDisplay"
         android:layout_width="300dp"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:background="@color/light_grey"
-        android:id="@+id/NUmberDisplay"
-        />
+        android:background="@color/light_grey" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/NumberDisplay"
+        android:layout_alignLeft="@id/NumberDisplay"
+        android:layout_alignRight="@id/NumberDisplay"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@id/NUmberDisplay"
-        android:layout_alignLeft="@id/NUmberDisplay"
-        android:layout_below="@id/NUmberDisplay"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/rosada"
-
+        android:id="@+id/CountsUp"
+        android:onClick="countUp"
         />
 
 
