@@ -3,6 +3,7 @@ package com.example.sevens3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class BreakActivityAuto extends AppCompatActivity {
 
@@ -11,4 +12,11 @@ public class BreakActivityAuto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_break_auto);
     }
+
+    public void goToBreakManual(View view)
+    {
+
+    }
+
+
 }
