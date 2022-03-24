@@ -58,8 +58,9 @@
         android:textColor="@color/rosada"
         android:gravity="center"
         android:textSize="50dp"
+        android:fontFamily="@font/comfortaaregular"
         />
-
+    <!--TODO : add haptic feedback into above button -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
