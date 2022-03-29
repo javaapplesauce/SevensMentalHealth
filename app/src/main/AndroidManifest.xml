@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sevens3">
         <activity
+            android:name=".BreakActivityManual"
+            android:exported="false" />
+        <activity
             android:name=".BreakActivityAuto"
             android:exported="false" />
         <activity

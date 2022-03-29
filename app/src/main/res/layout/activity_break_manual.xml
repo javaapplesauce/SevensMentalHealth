@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BreakActivityAuto"
+    tools:context=".BreakActivityManual"
     android:background="@color/dark_grey"
     >
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="40dp"
@@ -24,14 +25,14 @@
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/SwitchType2"
+            android:id="@+id/SwitchType"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/switch_button"
             android:scaleType="centerInside"
             android:background="@color/dark_grey"
-            android:onClick="goToBreakManual"
+            android:onClick="goToBreakAuto"
 
             />
 
@@ -51,7 +52,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/NumberDisplay2"
+        android:id="@+id/NumberDisplay"
         android:layout_width="300dp"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
@@ -63,5 +64,57 @@
         android:ellipsize="none"
         android:scrollHorizontally="false"
         />
+    <!--TODO : add haptic feedback into above button -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/NumberDisplay"
+        android:layout_alignLeft="@id/NumberDisplay"
+        android:layout_alignRight="@id/NumberDisplay"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/rosada"
+        android:id="@+id/CountsUp"
+        android:onClick="countUp"
+        android:hapticFeedbackEnabled="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/refresh_button"
+            android:scaleType="centerInside"
+            android:background="@color/dark_grey"
+            android:layout_weight="1"
+            android:layout_marginRight="120dp"
+            android:layout_marginTop="20dp"
+
+            android:id="@+id/resetButton"
+            android:onClick="resetCounter"
+            />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back_button"
+            android:scaleType="centerInside"
+            android:background="@color/dark_grey"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+
+            android:id="@+id/backButton"
+            android:onClick="goBack"
+            />
+
+
+    </LinearLayout>
+    <!--TODO: Add function where if you hold a button, it says the function -->
 
 </RelativeLayout>

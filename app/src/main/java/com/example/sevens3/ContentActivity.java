@@ -21,7 +21,7 @@ public class ContentActivity extends AppCompatActivity {
         Button breakButton = findViewById(R.id.BreakButton);
 
         try {
-            Intent k = new Intent(ContentActivity.this, BreakActivityAuto.class);
+            Intent k = new Intent(ContentActivity.this, BreakActivityManual.class);
             startActivity(k);
         } catch(Exception e) {
             e.printStackTrace();
