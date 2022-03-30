@@ -7,6 +7,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.Button;
@@ -20,16 +21,20 @@ import java.util.TimeZone;
 
 public class BreakActivityAuto extends AppCompatActivity {
 
-    TextView tvTimer;
-    long startTime, timeInMilliseconds = 0;
-    Handler customHandler = new Handler();
+    private int displayedNum;
+    private double interval;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_break_auto);
 
-        tvTimer = (TextView) findViewById(R.id.tvTimer);
+    }
+
+    public void BreakActivityAuto()
+    {
+        this.displayedNum = 0;
+        this.interval = 1.0;
     }
 
     public void goToBreakManual(View view)
@@ -37,34 +42,31 @@ public class BreakActivityAuto extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.SwitchType2);
 
         try {
-            Intent k = new Intent(BreakActivityAuto.this, BreakActivityAuto.class);
+            Intent k = new Intent(BreakActivityAuto.this, BreakActivityManual.class);
             startActivity(k);
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
+    public void StartingStoppingTimer(View view)
+    {
+        ImageButton activateButton = findViewById(R.id.playButton);
+        TextView displayedNum2 = findViewById(R.id.NumberDisplay2);
 
-    public static String getDateFromMillis(long d) {
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
-        df.setTimeZone(TimeZone.getTimeZone("GMT"));
-        return df.format(d);
-    }
-
-    public void start(View v) {
-        startTime = SystemClock.uptimeMillis();
-        customHandler.postDelayed(updateTimerThread, 0);
-    }
-
-    public void stop(View v) {
-        customHandler.removeCallbacks(updateTimerThread);
-    }
-
-    private Runnable updateTimerThread = new Runnable() {
-        public void run() {
-            timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
-            tvTimer.setText(getDateFromMillis(timeInMilliseconds));
-            customHandler.postDelayed(this, 1000);
+        if (activateButton.getResources().getResourceEntryName(activateButton.getId()).equals("mainpage_play_button"));
+        {
+            CountingUp(displayedNum2);
+            // have something that changes the button to the pause button
         }
-    };
+        // have an if statement taht detects if the name of the button is pause or not
 
+        // call counting up or pause depending on which one it is
+
+
+    }
+
+    public void CountingUp(View view)
+    {
+        TextView displayedNum2 = findViewById(R.id.NumberDisplay2);
+    }
 }
