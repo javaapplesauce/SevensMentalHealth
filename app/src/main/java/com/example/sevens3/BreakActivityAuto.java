@@ -3,6 +3,7 @@ package com.example.sevens3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class BreakActivityAuto extends AppCompatActivity {
 
@@ -52,12 +54,26 @@ public class BreakActivityAuto extends AppCompatActivity {
     {
         ImageButton activateButton = findViewById(R.id.playButton);
         TextView displayedNum2 = findViewById(R.id.NumberDisplay2);
+        // displayedNum2.setText(activateButton.getResources().getResourceEntryName(activateButton.getId()));
 
-        if (activateButton.getResources().getResourceEntryName(activateButton.getId()).equals("mainpage_play_button"));
+        Drawable drawable = activateButton.getDrawable();
+
+        if (drawable.getConstantState().equals(getResources().getDrawable(R.drawable.play_button).getConstantState()))
         {
+            activateButton.setImageResource(R.drawable.pause_button);
             CountingUp(displayedNum2);
+
             // have something that changes the button to the pause button
         }
+        else
+        {
+            // stop CountingUp
+            activateButton.setImageResource(R.drawable.play_button);
+            displayedNum2.setText("this worked correctly");
+            // have something that changes the button to the pause button
+        }
+
+
         // have an if statement taht detects if the name of the button is pause or not
 
         // call counting up or pause depending on which one it is
@@ -68,5 +84,23 @@ public class BreakActivityAuto extends AppCompatActivity {
     public void CountingUp(View view)
     {
         TextView displayedNum2 = findViewById(R.id.NumberDisplay2);
+        displayedNum2.setText("test");
+
+        boolean i = true;
+        int r = 1;
+
+        while(i == true)
+        {
+            displayedNum2.setText("" + (r % 2));
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            r = r % 2;
+            r++;
+        }
+
+
     }
 }
