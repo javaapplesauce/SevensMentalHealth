@@ -10,14 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sevens3.R;
 import com.example.sevens3.data.Alarm;
-import com.learntodroid.simplealarmclock.R;
-import com.learntodroid.simplealarmclock.data.Alarm;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
         super.onCreate(savedInstanceState);
 
         alarmRecyclerViewAdapter = new AlarmRecyclerViewAdapter(this);
-        alarmsListViewModel = ViewModelProviders.of(this).get(AlarmsListViewModel.class);
+        alarmsListViewModel = ViewModelProvider.of(this).get(AlarmsListViewModel.class);
         alarmsListViewModel.getAlarmsLiveData().observe(this, new Observer<List<Alarm>>() {
             @Override
             public void onChanged(List<Alarm> alarms) {
@@ -57,6 +56,7 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_alarmsListFragment_to_createAlarmFragment);
+                // might cause error b/c i created a random value and idk how to fix it lol
             }
         });
 

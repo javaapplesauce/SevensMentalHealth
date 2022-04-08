@@ -9,8 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.learntodroid.simplealarmclock.R;
-import com.learntodroid.simplealarmclock.data.Alarm;
+import com.example.sevens3.R;
+import com.example.sevens3.data.Alarm;
+
 
 public class AlarmViewHolder extends RecyclerView.ViewHolder {
     private TextView alarmTime;

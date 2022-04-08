@@ -27,6 +27,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CreateAlarmFragment extends Fragment {
+
+    TimePicker timePicker = findViewById(R.id.fragment_createalarm_timePicker);
+
+
     @BindView(R.id.fragment_createalarm_timePicker) TimePicker timePicker;
     @BindView(R.id.fragment_createalarm_title) EditText title;
     @BindView(R.id.fragment_createalarm_scheduleAlarm) Button scheduleAlarm;

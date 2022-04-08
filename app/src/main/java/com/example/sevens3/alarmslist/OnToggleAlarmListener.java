@@ -1,6 +1,7 @@
 package com.example.sevens3.alarmslist;
 
-import com.learntodroid.simplealarmclock.data.Alarm;
+
+import com.example.sevens3.data.Alarm;
 
 public interface OnToggleAlarmListener {
     void onToggle(Alarm alarm);

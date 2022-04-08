@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.learntodroid.simplealarmclock.data.Alarm;
-import com.learntodroid.simplealarmclock.data.AlarmRepository;
+import com.example.sevens3.data.Alarm;
+import com.example.sevens3.data.AlarmRepository;
 
 import java.util.List;
 

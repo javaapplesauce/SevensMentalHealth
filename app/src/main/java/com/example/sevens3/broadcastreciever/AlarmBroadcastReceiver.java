@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.widget.Toast;
 
+import com.example.sevens3.service.AlarmService;
+import com.example.sevens3.service.RescheduleAlarmsService;
+
 import java.util.Calendar;
 
 public class AlarmBroadcastReceiver extends BroadcastReceiver {
